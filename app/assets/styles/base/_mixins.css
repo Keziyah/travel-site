@@ -1,0 +1,33 @@
+/*this is a mixin. it kinda replaces media queries
+In my css, I don't have to remember the widths. Those
+are replaced by these "variables".
+Use this for mobile first design. In my stylesheets, make styles
+for the smallest screens first. Then, under each rule, add the mixins for
+other screen widths.
+*/
+
+@define-mixin atSmall {
+@media (min-width: 530px) {
+  @mixin-content;
+}
+}
+
+@define-mixin atMedium {
+  @media (min-width: 800px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin atLarge {
+  @media (min-width: 1200px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin clearfix {
+  &::after { /* This is a clearfix*/
+    content: "";
+    clear: both;
+    display: table;
+  }
+}

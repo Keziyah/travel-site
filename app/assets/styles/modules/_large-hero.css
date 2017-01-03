@@ -1,0 +1,77 @@
+.large-hero {
+   border-bottom: 10px solid $mainBlue;
+   position: relative;
+
+   &__image {
+     display: block;
+   }
+   /*Using block instead of inline prevents gaps */
+
+   &__text-content { /*centering the content on the pic. this replaces .large-hero__text-content */
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     /*translateY vertically positions an element based on its own height */
+     left: 0;
+     width: 100%;
+     text-align: center;
+   }
+
+   &__title {
+     font-weight: 300;
+     color: $mainBlue;
+     font-size: 2.4rem;
+     margin: 0;
+
+     @mixin atSmall {
+       font-size: 4.8rem;
+     }
+
+   }
+
+   &__subtitle {
+     font-weight: 300;
+     color: $mainBlue;
+     font-size: 1.5rem;
+     margin: 0;
+
+     @mixin atSmall {
+       font-size: 2.9rem;
+     }
+   }
+
+   &__description {
+     color: #fff;
+     font-size: 1.1rem;
+     font-weight: 100;
+     text-shadow: 2px 2px 0 rgba(0, 0, 0, .1);
+     max-width: 30rem; /*this gives it a line break */
+     margin-left: auto;
+     margin-right: auto;
+
+     mixin atSmall {
+       font-size: 1.875rem;
+     }
+   }
+
+}
+
+/*
+Use rem instead of em. Rem sizes are based on the root html element size.
+Measure something using click and drag with the mouse. Then to find out how many
+rem you need, divide the px by 16.
+*/
+
+/*
+BEM
+B: Block--an independent reusable part of our design. Example: one of the testamonial block
+E: Element. Elements belong to blocks. It cannot be used outside of the block it belongs to
+M: Modifier. Can be used on a block or an element to indicate a change in the default state of an object.
+
+Here, the block is the large-hero div. in the html, the div has the class of
+large-hero. All of the elements of the large-hero are denoted by two undercores.
+Ex. large-hero__title. In the css, we can put the elements of this block within
+the block, as we see above. the & replaces the name of the block.
+For modifiers, use two dashes. As is btn--orange. See the btn stylesheet for examples.
+This css only works if you run it through postcss.
+*/

@@ -1,0 +1,46 @@
+/*Dont forget to clear floats when creating your own columns.
+Here, the parent row div collapses (has no height), unless we do a clearfix.
+ */
+
+.row {
+  @mixin clearfix;
+
+  &--gutters {
+    padding-right: -65px; /*so that the right column doesn't overflow. be sure to have overflow: hidden in the wrapper */
+  }
+
+  &--gutters > div { /*any divs that are children of a parent row will have margins */
+    padding-right: 65px;
+  }
+
+  &__b-margin-until-medium { /*a little vertical spacing on small screens only */
+    margin-bottom: 1rem;
+  }
+
+/*two colums are only applied for medium sized screens and above */
+  @mixin atMedium {
+
+    &__b-margin-until-medium {
+      margin-bottom: 0;
+    }
+
+    &__medium-4 {
+      float: left;
+      width: 33.33%;    /*100 divided by 12 times 4 */
+    }
+
+    &__medium-4--larger {
+      width: 37%;
+    }
+
+    &__medium-8 {
+      float: left;
+      width: 66.66%;
+    }
+
+    &__medium-8--smaller {
+      width: 63%;
+    }
+  }
+
+}

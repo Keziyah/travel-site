@@ -1,0 +1,42 @@
+/* This is our main CSS file. What it does is import our module css files (from
+different blocks of our website) into this file. Postcss import will combine
+these files into one. (Don't forget to download import from npm)
+When you create a new import file, or if gulp throws an error,
+restart/re-run gulp watch.
+The order of these imports matters.
+***Base: applies to things that are applicable across the board.
+          The mixins are for media queries, variables are for variables,
+          and global are for selectors that will always apply.
+***Modules: applies to styling parts of the page, in ways that we can re-use the
+          styles. A new class name is a new module. Modules can be div wrappers,
+          headlines, sections, buttons, content, etc.
+
+
+*/
+
+@import "normalize.css";
+/* since importhing normalize, which we downloaded earlier, our final stylesheet now contains
+all the styles that are used in normalize.css. Our styles are at the bottom of the file.
+Normalize is an alternative to CSS reset. It adjusts styles so that browsers render
+things consistently.
+*/
+@import "base/_variables";
+
+@import "base/_mixins";
+
+@import "base/_global";
+
+@import "modules/_large-hero";
+/*postcss-import will add this to the final styles */
+
+@import "modules/_btn";
+
+@import "modules/_wrapper";
+
+@import "modules/_page-section";
+
+@import "modules/_headline";
+
+@import "modules/_row";
+
+@import "modules/_generic-content-container";

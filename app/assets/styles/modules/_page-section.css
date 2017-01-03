@@ -1,0 +1,13 @@
+/*This class adds padding for each section on the page */
+.page-section {
+  padding: 1.2rem 0; 
+
+  @mixin atMedium {
+  padding: 4.5rem 0; /*no left and right padding */
+}
+
+  &--blue {
+    background-color: $mainBlue;
+    color: #fff;
+  }
+}
