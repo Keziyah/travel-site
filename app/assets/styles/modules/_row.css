@@ -6,11 +6,19 @@ Here, the parent row div collapses (has no height), unless we do a clearfix.
   @mixin clearfix;
 
   &--gutters {
-    padding-right: -65px; /*so that the right column doesn't overflow. be sure to have overflow: hidden in the wrapper */
+    margin-right: -65px; /*so that the right column doesn't overflow. be sure to have overflow: hidden in the wrapper */
+  }
+
+  &--gutters-large {
+    margin-right: -100px;
   }
 
   &--gutters > div { /*any divs that are children of a parent row will have margins */
     padding-right: 65px;
+  }
+
+  &--gutters-large > div {
+    padding-right: 100px; 
   }
 
   &__b-margin-until-medium { /*a little vertical spacing on small screens only */
@@ -31,6 +39,11 @@ Here, the parent row div collapses (has no height), unless we do a clearfix.
 
     &__medium-4--larger {
       width: 37%;
+    }
+
+    &__medium-6 {
+      float: left;
+      width: 50%;
     }
 
     &__medium-8 {
